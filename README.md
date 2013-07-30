@@ -13,7 +13,9 @@ Download or clone this [repository](https://github.com/kfr2/pelican-gist-comment
     PLUGIN_PATH = 'plugins/'
     PLUGINS = ('gist_comments', )
 
-**Note:** I would **strongly** suggest you store the authentication token outside of version control. You may find success saving the token to an operating system environment variable and later retrieving it in your Pelican configuration file via `os.environ.get('VARIABLE_NAME')`.
+GitHub authentication tokens can be created on the [GitHub settings page](https://github.com/settings/applications) (under the "Personal API Access Token" section).
+
+**Note:** I would **strongly** suggest you store the authentication token outside of version control. You may find success saving the token to a system environment variable and later retrieving it in your Pelican configuration file via `os.environ.get('VARIABLE_NAME')`.
 
 See the [pelican plugins README](https://github.com/getpelican/pelican-plugins/) for more information.
 
