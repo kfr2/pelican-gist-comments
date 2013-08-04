@@ -82,11 +82,14 @@ def gist_comments(generator, metadata):
     page_url = '%s/%s' % (generator.settings['SITEURL'], slug)
     gist_ids = _load_gist_ids()
 
+    gist_added = False
     if not slug in gist_ids:
+        gist_added = True
         gist_ids[slug] = _create_gist(metadata['title'], page_url, generator.settings['GITHUB_AUTH_TOKEN'])
 
     metadata['gist_id'] = gist_ids[slug]
-    _save_gist_ids(gist_ids)
+    if gist_added:
+        _save_gist_ids(gist_ids)
 
 
 def register():
